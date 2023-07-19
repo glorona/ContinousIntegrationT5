@@ -39,4 +39,9 @@ public class Inventory {
         return true;
     }
     
+    public boolean availableMeal(Meal meal, int amount) throws Exception {
+        //throw new Exception(meal+" is out of inventory for this amount. We only have "+inventory.get(meal)+" left.");
+        return (inventory.get(meal)-amount)>0;
+    }
+    
 }
