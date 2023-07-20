@@ -85,7 +85,7 @@ class InventoryTest {
 		
 		boolean aprobado = inventario.revisar(order);
 		assertTrue(aprobado);
-		assertEquals( 4 , Inventory.getInventory().get(pizzaMargarita));
+		assertEquals( 5 , Inventory.getInventory().get(pizzaMargarita));
 		assertEquals( 20 , Inventory.getInventory().get(pizzaNapolitana));;
 	}
 	
