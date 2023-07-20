@@ -21,7 +21,7 @@ public class Inventory {
         return inventory;
     }
     
-    public boolean revisar(Order order) throws Exception{        
+    public static boolean revisar(Order order) throws Exception{        
         for(Meal o:order.meals.keySet()){
             if(inventory.containsKey(o)){
                 try{

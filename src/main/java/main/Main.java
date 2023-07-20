@@ -81,12 +81,14 @@ public class Main {
 	        
 	        //Create Order
 	        Order o1 = new Order(mealsUsr);
-	        double total = o1.checkTotalAmmount();
-	        System.out.println("Your order details: ");
-	        for(Meal ml: mealsUsr.keySet()) {
-	        	System.out.println(mealsUsr.get(ml) +  " orders of "  + ml.getName() + " that are " + ml.getPrice().toString() + " each "  );
+	        if(Inventory.revisar(o1)) {
+	        	double total = o1.checkTotalAmmount();
+		        System.out.println("Your order details: ");
+		        for(Meal ml: mealsUsr.keySet()) {
+		        	System.out.println(mealsUsr.get(ml) +  " orders of "  + ml.getName() + " that are " + ml.getPrice().toString() + " each "  );
+		        }
+		        System.out.println("For a total of $" + total);
 	        }
-	        System.out.println("For a total of $" + total);
 	        
 		}catch(InputMismatchException ex) {
 			System.out.println("Wrong input! Please insert the correct data.");
