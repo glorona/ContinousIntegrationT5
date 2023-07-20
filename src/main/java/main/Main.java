@@ -46,48 +46,31 @@ public class Main {
 
 	private void menuPrincipal() {
 		try {
-			System.out.println("Welcome to Delicias de la Italia! We have these items available:");
+			System.out.println("Welcome to Delicias de la Italia! We have these items available: ");
 			int ingreso;
 			ArrayList<Meal> mealsAv = new ArrayList<Meal>();
 			Map<Meal,Integer> mealsUsr = new LinkedHashMap<Meal, Integer>();
 			String confirmacion = "";
 	        Scanner sc = new Scanner(System.in);
-	        do {
-	        	Integer id = 1;
-		        for(Meal ml: inventory.keySet()) {
-		        	
-		        	System.out.println(id.toString() + ". " + ml.getName());
-		        	id++;
-		        	mealsAv.add(ml);
-		        }
-		        System.out.println("What would you like to order?");
-		        ingreso = sc.nextInt();
-		        sc.nextLine();
-		        Meal mealSelect = mealsAv.get(ingreso-1);
-		        System.out.println("You have selected " + mealSelect.getName() );
-		        int cantidad;
-		        System.out.println("How many would you like to get? ");
-		        cantidad = sc.nextInt();
-		        sc.nextLine();
-		        if(Inventory.availableMeal(mealSelect,cantidad)) {
-		        	System.out.println("Added to your order.");
-		        	mealsUsr.put(mealSelect, cantidad);
-		        }
-		        
-	            System.out.println("Would you like to add another item? Yes/No");
-	            confirmacion = sc.nextLine();
-            
-            }while (!(confirmacion.equals("No")));
+	        addItems(mealsUsr,mealsAv,sc);
 	        
 	        //Create Order
 	        Order o1 = new Order(mealsUsr);
 	        if(Inventory.revisar(o1)) {
-	        	double total = o1.checkTotalAmmount();
-		        System.out.println("Your order details: ");
-		        for(Meal ml: mealsUsr.keySet()) {
-		        	System.out.println(mealsUsr.get(ml) +  " orders of "  + ml.getName() + " that are " + ml.getPrice().toString() + " each "  );
+	        	String conf = "";
+	        	do {
+	        	checkOrderDetails(mealsUsr,o1);
+	        	do {
+		        System.out.println("Are these items correct?");
+		        conf = sc.nextLine();
+	        	}while(!(conf.equals("Yes") || conf.equals("No")));
+		        if(conf.equals("Yes") || conf.equals("yes")) {
+		        	System.out.println("Order confirmed.");
 		        }
-		        System.out.println("For a total of $" + total);
+		        else {
+		        	addItems(mealsUsr,mealsAv,sc);
+		        }
+	        	}while (!(conf.equals("Yes")));
 	        }
 	        
 		}catch(InputMismatchException ex) {
@@ -100,5 +83,66 @@ public class Main {
 			
 		}
 	}
+	
+	private void checkOrderDetails(Map<Meal,Integer> mealsUsr, Order o1) {
+		try {
+		double total = o1.checkTotalAmmount();
+		 System.out.println("Your order details: ");
+	        for(Meal ml: mealsUsr.keySet()) {
+	        	System.out.println(mealsUsr.get(ml) +  " orders of "  + ml.getName() + " that are " + ml.getPrice().toString() + " each "  );
+	        }
+	        System.out.println("For a total of $" + total);
+		}catch(Exception ex) {
+			System.out.println(ex.toString());
+			menuPrincipal();
+		}
+	}
+	
+	private void addItems(Map<Meal,Integer> mealsUsr, ArrayList<Meal> mealsAv, Scanner sc) {
+		try {
+		String confirmacion = "";
+		int ingreso;
+		do {
+        	Integer id = 1;
+	        for(Meal ml: inventory.keySet()) {
+	        	
+	        	System.out.println(id.toString() + ". " + ml.getName());
+	        	id++;
+	        	mealsAv.add(ml);
+	        }
+	        do {
+	        System.out.println("What would you like to order?");
+	        ingreso = sc.nextInt();
+	        sc.nextLine();
+	        }while(ingreso>mealsAv.size());
+	        Meal mealSelect = mealsAv.get(ingreso-1);
+	        System.out.println("You have selected " + mealSelect.getName() );
+	        int cantidad;
+	        do {
+	        System.out.println("How many would you like to get? ");
+	        cantidad = sc.nextInt();
+	        sc.nextLine();
+	        }while(cantidad<=0);
+	        if(Inventory.availableMeal(mealSelect,cantidad)) {
+	        	System.out.println("Added to your order.");
+	        	mealsUsr.put(mealSelect, cantidad);
+	        }
+	        
+            System.out.println("Would you like to add another item? Yes/No");
+            confirmacion = sc.nextLine();
+        
+        }while (!(confirmacion.equals("No")));
+		
+	}catch(InputMismatchException ex) {
+		System.out.println("Wrong input! Please insert the correct data.");
+		menuPrincipal();
+		
+	}catch(Exception ex) {
+		System.out.println(ex.toString());
+		menuPrincipal();
+		
+	}
+}
+	
 }
 
