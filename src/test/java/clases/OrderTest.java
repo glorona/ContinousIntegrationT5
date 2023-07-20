@@ -37,9 +37,8 @@ class OrderTest {
 	@Test
 	/**
 	 * TC-11
-	 * @throws Exception 
 	 */
-	void testcheckTotalAmmountDiscountLess5() throws Exception {
+	void testcheckTotalAmmountDiscountLess5()  {
 		
 		Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
 		meals.put(pizzaMargarita , 2);
@@ -54,7 +53,11 @@ class OrderTest {
 		double finalPrice = price -(price*discount)-reduced+added;
 		assertEquals( finalPrice  , order.checkTotalAmmount() );
 	}
-	
+	@Test
+	/**
+	 * TC-12
+	 * @throws Exception 
+	 */
 void testcheckTotalAmmountDiscountLess5Special() throws Exception {
 		
 		Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
@@ -70,7 +73,11 @@ void testcheckTotalAmmountDiscountLess5Special() throws Exception {
 		double finalPrice = price -(price*discount)-reduced+added;
 		assertEquals( finalPrice  , order.checkTotalAmmount() );
 	}
-
+	
+	@Test
+	/**
+	 * TC-13
+	 */
 void testcheckTotalAmmountDiscount5to10() throws Exception {
 	
 	Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
@@ -86,8 +93,11 @@ void testcheckTotalAmmountDiscount5to10() throws Exception {
 	double finalPrice = price -(price*discount)-reduced+added;
 	assertEquals( finalPrice  , order.checkTotalAmmount() );
 }
-
-void testcheckTotalAmmountDiscount5to10Special() throws Exception {
+@Test
+/**
+ * TC-14
+ */
+void testcheckTotalAmmountDiscount5to10Special() {
 	
 	Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
 	meals.put(pastaAlfredo , 4);
@@ -99,11 +109,15 @@ void testcheckTotalAmmountDiscount5to10Special() throws Exception {
 	double reduced = 10;
 	double added = price * 0.05;
 	
-	double finalPrice = price -(price*discount)-reduced+added;
+	double finalPrice = price -(price*discount)-reduced + added;
 	assertEquals( finalPrice  , order.checkTotalAmmount() );
 }
 
-void testcheckTotalAmmountDiscountLarger10() throws Exception {
+@Test
+/**
+ * TC-15
+ */
+void testcheckTotalAmmountDiscountLarger10()  {
 	
 	Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
 	meals.put(pizzaMargarita , 5);
@@ -119,7 +133,11 @@ void testcheckTotalAmmountDiscountLarger10() throws Exception {
 	assertEquals( finalPrice  , order.checkTotalAmmount() );
 }
 
-void testcheckTotalAmmountDiscountLarger10Special() throws Exception {
+@Test
+/**
+ * TC-16
+ */
+void testcheckTotalAmmountDiscountLarger10Special()  {
 	
 	Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
 	meals.put(pizzaMargarita , 5);

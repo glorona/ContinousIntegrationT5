@@ -1,16 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: clases.InventoryTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.064 s <<< FAILURE! - in clases.InventoryTest
-testRevisarLowerLimit  Time elapsed: 0.028 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <9> but was: <10>
-	at clases.InventoryTest.testRevisarLowerLimit(InventoryTest.java:54)
-
-testRevisarMediumValue  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <4> but was: <10>
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.049 s <<< FAILURE! - in clases.InventoryTest
+testRevisarMediumValue  Time elapsed: 0.006 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <4> but was: <5>
 	at clases.InventoryTest.testRevisarMediumValue(InventoryTest.java:88)
-
-testRevisarUpperLimit  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <0> but was: <10>
-	at clases.InventoryTest.testRevisarUpperLimit(InventoryTest.java:71)
 

@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: clases.OrderTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in clases.OrderTest
-testcheckTotalAmmountDiscountLess5  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <47.96> but was: <0.0>
-	at clases.OrderTest.testcheckTotalAmmountDiscountLess5(OrderTest.java:55)
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in clases.OrderTest

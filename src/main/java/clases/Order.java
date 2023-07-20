@@ -20,7 +20,7 @@ public class Order {
         this.meals = meals;
     }
     
-    public double checkTotalAmmount() throws Exception{
+    public double checkTotalAmmount(){
         int cont=0;
         double totalPrice=0;
         boolean Special=false;
@@ -35,10 +35,8 @@ public class Order {
                 Special=true;
             }
         }
-        if(cont>100){
-            throw new Exception("Ammount out of limit.");
-        } 
-        if(10>cont && cont>5){
+        
+        if(10>=cont && cont>5){
             discount=0.10;
         }else if(cont>10){
             discount=0.2;
@@ -46,12 +44,12 @@ public class Order {
         if(Special){
             added=totalPrice*0.05;
         }
-        if(totalPrice>50){
+        if(totalPrice>50 && totalPrice<=100){
             reduced=10;
         }else if (totalPrice>100){
             reduced=25;
         }
-        totalPrice= totalPrice + (totalPrice*discount)-reduced+added;
+        totalPrice= totalPrice - (totalPrice*discount)-reduced+added;
         return totalPrice;
     }
 }
