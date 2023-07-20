@@ -17,7 +17,7 @@ public class Order {
     
     public Order(Map<Meal,Integer> meals){
         Order.ID++;
-        meals=this.meals;
+        this.meals = meals;
     }
     
     public double checkTotalAmmount() throws Exception{
@@ -51,8 +51,7 @@ public class Order {
         }else if (totalPrice>100){
             reduced=25;
         }
-        totalPrice=(totalPrice*discount)-reduced+added;
-        
+        totalPrice= totalPrice + (totalPrice*discount)-reduced+added;
         return totalPrice;
     }
 }
