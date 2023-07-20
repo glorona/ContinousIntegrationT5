@@ -46,7 +46,7 @@ public class Main {
 
 	private void menuPrincipal() {
 		try {
-			System.out.println("Welcome to Delicias de la Italia! We have these items available:");
+			System.out.println("Welcome to Delicias de la Italia! We have these items available: ");
 			int ingreso;
 			ArrayList<Meal> mealsAv = new ArrayList<Meal>();
 			Map<Meal,Integer> mealsUsr = new LinkedHashMap<Meal, Integer>();
