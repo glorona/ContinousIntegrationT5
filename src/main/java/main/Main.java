@@ -5,7 +5,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import clases.*;
+import clases.Inventory;
+import clases.Meal;
+import clases.Order;
+import clases2.*;
 
 
 

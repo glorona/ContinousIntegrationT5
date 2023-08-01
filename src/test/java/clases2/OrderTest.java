@@ -1,10 +1,14 @@
-package clases;
+package clases2;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import clases.Inventory;
+import clases.Meal;
+import clases.Order;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
