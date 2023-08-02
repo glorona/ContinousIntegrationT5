@@ -1,0 +1,5 @@
+io\cucumber\skeleton\RunCucumberTest.class
+io\cucumber\skeleton\availableMeal.class
+clases\OrderTest.class
+io\cucumber\skeleton\checkTotalAmmount.class
+clases\InventoryTest.class

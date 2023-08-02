@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="clases.OrderTest" time="0.015" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="clases.OrderTest" time="0.023" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="EC"/>
     <property name="sun.boot.library.path" value="C:\Users\LENOVO\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.15.v20220515-1236\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\LENOVO\AppData\Local\Temp\surefire15542799226826151045\surefirebooter-20230731223707701_3.jar C:\Users\LENOVO\AppData\Local\Temp\surefire15542799226826151045 2023-07-31T22-37-07_382-jvmRun1 surefire-20230731223707701_1tmp surefire_0-20230731223707701_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\LENOVO\AppData\Local\Temp\surefire12390116158093442571\surefirebooter-20230801233219383_3.jar C:\Users\LENOVO\AppData\Local\Temp\surefire12390116158093442571 2023-08-01T23-32-19_084-jvmRun1 surefire-20230801233219383_1tmp surefire_0-20230801233219383_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\LENOVO\Downloads\ContinousIntegrationT5\target\test-classes;C:\Users\LENOVO\Downloads\ContinousIntegrationT5\target\classes;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-java\7.13.0\cucumber-java-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-core\7.13.0\cucumber-core-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-gherkin\7.13.0\cucumber-gherkin-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.13.0\cucumber-gherkin-messages-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\tag-expressions\5.0.1\tag-expressions-5.0.1.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\datatable\7.13.0\datatable-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-plugin\7.13.0\cucumber-plugin-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\docstring\7.13.0\docstring-7.13.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\html-formatter\20.3.1\html-formatter-20.3.1.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\LENOVO\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\LENOVO\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.13.0\cucumber-junit-platform-engine-7.13.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-suite\1.10.0\junit-platform-suite-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.0\junit-platform-suite-api-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.0\junit-platform-suite-engine-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.0\junit-platform-suite-commons-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.0\junit-platform-launcher-1.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\LENOVO\AppData\Local\Temp\surefire15542799226826151045\surefirebooter-20230731223707701_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\LENOVO\AppData\Local\Temp\surefire12390116158093442571\surefirebooter-20230801233219383_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.15+10"/>
@@ -61,10 +61,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testcheckTotalAmmountDiscount5to10" classname="clases.OrderTest" time="0.001"/>
+  <testcase name="testcheckTotalAmmountDiscount5to10" classname="clases.OrderTest" time="0.002"/>
   <testcase name="testcheckTotalAmmountDiscountLess5" classname="clases.OrderTest" time="0.002"/>
-  <testcase name="testcheckTotalAmmountDiscount5to10Special" classname="clases.OrderTest" time="0.001"/>
-  <testcase name="testcheckTotalAmmountDiscountLess5Special" classname="clases.OrderTest" time="0.001"/>
-  <testcase name="testcheckTotalAmmountDiscountLarger10" classname="clases.OrderTest" time="0.002"/>
+  <testcase name="testcheckTotalAmmountDiscount5to10Special" classname="clases.OrderTest" time="0.003"/>
+  <testcase name="testcheckTotalAmmountDiscountLess5Special" classname="clases.OrderTest" time="0.002"/>
+  <testcase name="testcheckTotalAmmountDiscountLarger10" classname="clases.OrderTest" time="0.003"/>
   <testcase name="testcheckTotalAmmountDiscountLarger10Special" classname="clases.OrderTest" time="0.001"/>
 </testsuite>

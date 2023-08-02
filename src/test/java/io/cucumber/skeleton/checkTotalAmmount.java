@@ -1,4 +1,4 @@
-package test;
+package io.cucumber.skeleton;
 
 import clases.Inventory;
 import clases.Meal;
@@ -7,8 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,25 +22,38 @@ public class checkTotalAmmount {
 	@Given("an inventory with prices:")
 	public void an_inventory(io.cucumber.datatable.DataTable dataTable) {
 		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
+		
 		for (Map<String, String> columns : rows) {
-			
-			inventory.put(new Meal(columns.get("Meal"), Double.parseDouble(columns.get("Price"))), Integer.parseInt(columns.get("Quantity")));
+			inventory.put(new Meal(columns.get("Meal"), 
+					Double.parseDouble(columns.get("Price"))), 
+					Integer.parseInt(columns.get("Quantity")));
 	    }
 	}
 
 	@When("An order to be process contains:")
 	public void an_order_to_be_process_contains(io.cucumber.datatable.DataTable dataTable) {
+		Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
+
+		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
+		for (Map<String, String> columns : rows) {
+			Meal meal = new Meal(columns.get("Meal"), Double.parseDouble(columns.get("Price")));
+			meals.put(meal ,Integer.parseInt(columns.get("Quantity")));
+	    }
+		order = new Order(meals);
+	}
+	
+	@When("An order to be process contains an special:")
+	public void an_order_to_be_process_contains_an_special(io.cucumber.datatable.DataTable dataTable) {
 		
 		Map<Meal,Integer> meals = new LinkedHashMap<Meal,Integer>();
 
 		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
 		for (Map<String, String> columns : rows) {
-			
-			meals.put(new Meal(columns.get("Meal"), Double.parseDouble(columns.get("Price"))), Integer.parseInt(columns.get("Quantity")));
+			Meal meal = new Meal(columns.get("Meal"), Boolean.parseBoolean(columns.get("Special")) 
+					,Double.parseDouble(columns.get("Price")));
+			meals.put(meal ,Integer.parseInt(columns.get("Quantity")));
 	    }
-		
 		order = new Order(meals);
-	    
 	}
 
 	@Then("The order is approved")
@@ -61,8 +73,10 @@ public class checkTotalAmmount {
 	public void an_inventory_with_a_special(io.cucumber.datatable.DataTable dataTable) {
 		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
 		for (Map<String, String> columns : rows) {
-			
-			inventory.put(new Meal(columns.get("Meal"),  Boolean.parseBoolean(columns.get("Special")) ,Double.parseDouble(columns.get("Price"))), Integer.parseInt(columns.get("Quantity")));
+			inventory.put(new Meal(columns.get("Meal"), 
+					Boolean.parseBoolean(columns.get("Special")) ,
+					Double.parseDouble(columns.get("Price"))), 
+					Integer.parseInt(columns.get("Quantity")));
 	    }
 	}
  

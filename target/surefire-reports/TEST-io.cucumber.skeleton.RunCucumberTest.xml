@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="clases.InventoryTest" time="0.061" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="io.cucumber.skeleton.RunCucumberTest" time="0.333" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,11 +61,88 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testRevisarLowerLimit" classname="clases.InventoryTest" time="0.024"/>
-  <testcase name="testRevisarMediumValue" classname="clases.InventoryTest" time="0.001"/>
-  <testcase name="testRevisarUpperLimit" classname="clases.InventoryTest" time="0.001"/>
-  <testcase name="testAvailableMealMediumValue" classname="clases.InventoryTest" time="0.001"/>
-  <testcase name="testAvailableMealLowerLimit" classname="clases.InventoryTest" time="0.001"/>
-  <testcase name="testAvailableMealOverLimit" classname="clases.InventoryTest" time="0.002"/>
-  <testcase name="testAvailableMealUpperLimit" classname="clases.InventoryTest" time="0.001"/>
+  <testcase name="Check if there in enougth product in inventory with availableMeal() - Order of food cannot be delivered because inventory is not available" classname="Check if there in enougth product in inventory with availableMeal()" time="0.123">
+    <system-out><![CDATA[
+Scenario: Order of food cannot be delivered because inventory is not available &amp#27;[90m# io/cucumber/skeleton/availableMeal.feature:3&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32man inventory:&amp#27;[0m                                                          &amp#27;[90m# io.cucumber.skeleton.availableMeal.an_inventory(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity |
+    | pizzaMargarita | 10       |
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mA meal is order:&amp#27;[0m                                                        &amp#27;[90m# io.cucumber.skeleton.availableMeal.an_order_to_be_process_contains(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity |
+    | pizzaMargarita | 11       |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mThe meal is rejected&amp#27;[0m                                                    &amp#27;[90m# io.cucumber.skeleton.availableMeal.the_order_is_rejected()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Check if there in enougth product in inventory with availableMeal() - Order of food cannot be delivered because inventory is not available" classname="Check if there in enougth product in inventory with availableMeal()" time="0.008">
+    <system-out><![CDATA[
+Scenario: Order of food cannot be delivered because inventory is not available &amp#27;[90m# io/cucumber/skeleton/availableMeal.feature:12&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32man inventory:&amp#27;[0m                                                          &amp#27;[90m# io.cucumber.skeleton.availableMeal.an_inventory(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity |
+    | pizzaMargarita | 10       |
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mA meal is order:&amp#27;[0m                                                        &amp#27;[90m# io.cucumber.skeleton.availableMeal.an_order_to_be_process_contains(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity |
+    | pizzaMargarita | 5        |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mThe meal is accepted&amp#27;[0m                                                    &amp#27;[90m# io.cucumber.skeleton.availableMeal.the_order_is_accepted()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Calculate final price of the meal order with checkTotalAmmount() - Order of food with final price with no discount or extra charges" classname="Calculate final price of the meal order with checkTotalAmmount()" time="0.019">
+    <system-out><![CDATA[
+Scenario: Order of food with final price with no discount or extra charges &amp#27;[90m# io/cucumber/skeleton/checkTotalAmmount.feature:4&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32man inventory with prices:&amp#27;[0m                                          &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_inventory(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal            | Quantity | Price |
+    | pizzaMargarita  | 10       | 12.99 |
+    | pizzaNapolitana | 10       | 10.99 |
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mAn order to be process contains:&amp#27;[0m                                    &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_order_to_be_process_contains(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal            | Quantity | Price |
+    | pizzaMargarita  | 2        | 12.99 |
+    | pizzaNapolitana | 2        | 10.99 |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mThe order is approved&amp#27;[0m                                               &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_order_is_approved()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe final price is &amp#27;[0m&amp#27;[32m&amp#27;[1m47.96&amp#27;[0m                                             &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_final_price_is(java.lang.Double)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Calculate final price of the meal order with checkTotalAmmount() - Order of food with final price with only a 5% extra charges" classname="Calculate final price of the meal order with checkTotalAmmount()" time="0.01">
+    <system-out><![CDATA[
+Scenario: Order of food with final price with only a 5% extra charges &amp#27;[90m# io/cucumber/skeleton/checkTotalAmmount.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32man inventory with a special&amp#27;[0m                                   &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_inventory_with_a_special(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity | Price | Special |
+    | pizzaMargarita | 10       | 12.99 | false   |
+    | pizzaCarnica   | 10       | 15.99 | true    |
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mAn order to be process contains an special:&amp#27;[0m                    &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_order_to_be_process_contains_an_special(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity | Price | Special |
+    | pizzaMargarita | 2        | 12.99 | false   |
+    | pizzaCarnica   | 1        | 15.99 | true    |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mThe order is approved&amp#27;[0m                                          &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_order_is_approved()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe final price is &amp#27;[0m&amp#27;[32m&amp#27;[1m44.0685&amp#27;[0m                                      &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_final_price_is(java.lang.Double)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Calculate final price of the meal order with checkTotalAmmount() - Order of food final price with with only a 10% discount and and -10$" classname="Calculate final price of the meal order with checkTotalAmmount()" time="0.006">
+    <system-out><![CDATA[
+Scenario: Order of food final price with with only a 10% discount and and -10$ &amp#27;[90m# io/cucumber/skeleton/checkTotalAmmount.feature:28&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32man inventory with prices:&amp#27;[0m                                              &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_inventory(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity | Price |
+    | pizzaMargarita | 10       | 12.99 |
+    | pastaAlfredo   | 10       | 8.99  |
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mAn order to be process contains:&amp#27;[0m                                        &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_order_to_be_process_contains(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal           | Quantity | Price |
+    | pizzaMargarita | 2        | 12.99 |
+    | pastaAlfredo   | 4        | 8.99  |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mThe order is approved&amp#27;[0m                                                   &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_order_is_approved()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe final price is &amp#27;[0m&amp#27;[32m&amp#27;[1m45.746&amp#27;[0m                                                &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_final_price_is(java.lang.Double)&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="Calculate final price of the meal order with checkTotalAmmount() - Order of food final price with with only a 20% discount and and -25$" classname="Calculate final price of the meal order with checkTotalAmmount()" time="0.006">
+    <system-out><![CDATA[
+Scenario: Order of food final price with with only a 20% discount and and -25$ &amp#27;[90m# io/cucumber/skeleton/checkTotalAmmount.feature:40&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32man inventory with prices:&amp#27;[0m                                              &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_inventory(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal            | Quantity | Price |
+    | pizzaMargarita  | 10       | 12.99 |
+    | pizzaNapolitana | 10       | 10.99 |
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mAn order to be process contains:&amp#27;[0m                                        &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.an_order_to_be_process_contains(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | Meal            | Quantity | Price |
+    | pizzaMargarita  | 5        | 12.99 |
+    | pizzaNapolitana | 7        | 10.99 |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mThe order is approved&amp#27;[0m                                                   &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_order_is_approved()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe final price is &amp#27;[0m&amp#27;[32m&amp#27;[1m88.504&amp#27;[0m                                                &amp#27;[90m# io.cucumber.skeleton.checkTotalAmmount.the_final_price_is(java.lang.Double)&amp#27;[0m
+]]></system-out>
+  </testcase>
 </testsuite>

@@ -4,12 +4,12 @@
   <artifactId>diningexperience</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-  </properties>
+    </properties>
 
- <dependencyManagement>
+    <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.junit</groupId>
@@ -55,9 +55,8 @@
 
     </dependencies>
 
-
-  <build>
-    <plugins>
+    <build>
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -84,6 +83,5 @@
                 </configuration>
             </plugin>
         </plugins>
-  </build>
+    </build>
 </project>
-

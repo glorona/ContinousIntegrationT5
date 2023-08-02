@@ -34,6 +34,8 @@ public class Inventory {
                     throw new NullPointerException("Order is empty.");
                     //System.out.println("Order is empty.");
                 }
+            }else {
+            	return false;
             }
         }
         return true;

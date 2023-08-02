@@ -8,8 +8,6 @@ import java.util.Scanner;
 import clases.Inventory;
 import clases.Meal;
 import clases.Order;
-import clases2.*;
-
 
 
 public class Main {

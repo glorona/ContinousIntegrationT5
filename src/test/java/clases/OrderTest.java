@@ -72,7 +72,7 @@ void testcheckTotalAmmountDiscountLess5Special() throws Exception {
 		double price = (double) (pizzaMargarita.getPrice() * 2 + pizzaCarnica.getPrice()*1);
 		double discount = 0;
 		double reduced = 0;
-		double added = price * 0.05;
+		double added = (double) price * 0.05;
 		
 		double finalPrice = price -(price*discount)-reduced+added;
 		assertEquals( finalPrice  , order.checkTotalAmmount() );
