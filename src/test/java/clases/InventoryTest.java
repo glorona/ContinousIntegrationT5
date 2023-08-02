@@ -1,4 +1,4 @@
-package clases2;
+package clases;
 
 import static org.junit.jupiter.api.Assertions.*;
 

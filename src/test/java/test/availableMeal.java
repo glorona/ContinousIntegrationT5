@@ -1,13 +1,17 @@
 package test;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.junit.runner.RunWith;
+
 import static org.junit.Assert.*;
 
 import clases.Meal;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import clases.Inventory;
-
 
 public class availableMeal {
 
@@ -17,7 +21,7 @@ public class availableMeal {
 	private static int total;
 
 	
-	@Given("an inventory")
+	@Given("an inventory:")
 	public void an_inventory(io.cucumber.datatable.DataTable dataTable) {
 		
 		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
@@ -26,9 +30,8 @@ public class availableMeal {
 			inventory.put(new Meal(columns.get("Meal"), 12.99), Integer.parseInt(columns.get("Quantity")));
 	    }
 	}
-	}
 
-	@When("An order to be process contains")
+	@When("A meal is order:")
 	public void an_order_to_be_process_contains(io.cucumber.datatable.DataTable dataTable) {
 		
 		List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
@@ -38,13 +41,13 @@ public class availableMeal {
 		total = Integer.parseInt(rows.get(0).get("Quantity"));
 	}
 
-	@Then("The order is rejected")
+	@Then("The meal is rejected")
 	public void the_order_is_rejected() {
 	    
 		assertFalse(inventario.availableMeal(meal, total));
 	}
 	
-	@Then("The order is accepted")
+	@Then("The meal is accepted")
 	public void the_order_is_accepted() {
 		assertTrue(inventario.availableMeal(meal, total));
 
